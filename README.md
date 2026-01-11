@@ -19,7 +19,12 @@
 Q: What is a software guru?     
 A: First to get hired.  Last to get fired. 
 
-This guru engineer is the one who knows how to improve everyone
+While LLMs might be able to repalce the average programmer 
+(or [maybe not](https://www.youtube.com/watch?v=tbDDYKRFjhk)),
+the point of being a guru is that youare **not** average.
+
+The guru engineer is the one who stands out in the IT crowd.
+They know more than everyone else. They know how to improve everyone
 else's code, possessing a clear, unshakeable vision of what separates
 good work from bad. They identify friction and fix it rather than
 living with it, offering clear, succinct principles during code
