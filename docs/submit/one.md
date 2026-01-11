@@ -1,3 +1,5 @@
+.
+
 
 At 4:30pm on Wendesday please be in your seat with a  laptop open running a script
 runs and reports the version numbers of the following tools. 

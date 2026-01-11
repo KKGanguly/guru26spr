@@ -1,3 +1,6 @@
+.
+
+
 # Homework: Refactor the Word Frequency Counter
 
 ## Overview

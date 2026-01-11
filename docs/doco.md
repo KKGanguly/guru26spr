@@ -1,3 +1,5 @@
+.
+
 
 go to github.com/timm/xai. look at all the doco
 
