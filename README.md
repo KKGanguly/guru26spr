@@ -12,7 +12,40 @@
   <a href="/LICENSE.md"><img 
       src="https://img.shields.io/badge/©%20timm%202026-%234b4b4b?style=flat-square&logoColor=white" /></a></p>
 <h1 align="center">:cyclone: CSC491/591: How to be a SE Guru <br>NC State, Spring '26</h1>
-<img src="/docs/lect/banner.png"> 
+<img src="/banner.png"> 
+
+<img width=300 src="etc/img/guru.png" align=right>
+
+Q: What is a software guru?     
+A: First to get hired.  Last to get fired. 
+
+This guru engineer is the one who knows how to improve everyone
+else's code, possessing a clear, unshakeable vision of what separates
+good work from bad. They identify friction and fix it rather than
+living with it, offering clear, succinct principles during code
+reviews that elevate the entire team's standard. By bridging the
+gap between raw coding speed and enduring engineering value, the
+guru becomes the team's anchor.
+
+To achieve this, one must go beyond the standard curriculum. While
+[other subjects](https://missing.csail.mit.edu/) cover the critical
+"how" of our trade—mastering the command line, editors, and version
+control—true craftsmanship requires pairing this proficiency with
+the "why." We must fuse technical agility with timeless Software
+Engineering principles that transcend any single language
+(things like YAGNI,
+DRY, Separation of Concerns, and VITAL). This combination transforms
+you from a passive user of tools into an architect of control.
+
+We define this control through the motto: "Own what matters (VITAL),
+skip what doesn't (since, YAGNI)." Inspired by the "backpacking" mindset
+that built SQLite, we prioritize self-reliance and portability over
+dependency bloat. While modern development often adds complexity
+via heavy containers and shifting package managers, we champion
+lightweight, readable solutions that start fast and leave nothing
+behind. By acquiring your vital infrastructure locally, you build
+methods that survive the rise and fall of trends, ensuring your
+work remains accessible to future generations.
 
  <div align=center>
 
