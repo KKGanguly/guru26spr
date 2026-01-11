@@ -22,7 +22,7 @@
 | When |Wed 4:30PM - 7:15PM    
 |Where | 02321 Fitts-Woolard Hall |
 |Consult hours| Tuesday 2:45 to 4:45: [Booking required](https://calendar.app.google/2bPJr5kecX4QYSm56)   |
-|Disord server| [https://discord.gg/XAQZHEPt](https://discord.gg/XAQZHEPt| ) |
+|Disord server| [https://discord.gg/XAQZHEPt](https://discord.gg/XAQZHEPt) |
 |Who | Lecturer:  [Prof Tim Menzies](http://timm.fyi),  <timm@ieee.org>, "Tim Menzes" at our discord server.   <br> Tutor: Mr Srinath Srinivasan,  <ssrini27@ncsu.edu>, "Srinath" at our discord|
 
 
