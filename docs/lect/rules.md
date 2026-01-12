@@ -1218,17 +1218,17 @@ report(result)
 
 ```
 ┌─────────────────────────────────────┐
-│  ALWAYS                              │
+│  ALWAYS                             │
 │  - Separation of Concerns (SoC)     │
 │    (Never mix model with I/O)       │
-│  - Mechanism vs Policy               │
+│  - Mechanism vs Policy              │
 │    (Separate rules from code)       │
 ├─────────────────────────────────────┤
-│  USUALLY                             │
+│  USUALLY                            │
 │  - Single Responsibility (SRP)      │
 │  - Small Functions (<20 lines)      │
 ├─────────────────────────────────────┤
-│  SOMETIMES                           │
+│  SOMETIMES                          │
 │  - Streaming vs Loading             │
 │    (matters at scale)               │
 └─────────────────────────────────────┘
@@ -1259,7 +1259,6 @@ def processGrades(file):
 - Grading affects student outcomes
 - Must be correct
 - MUST be testable without mocking I/O!
--
 
 **4. Multiple contexts**
 
@@ -1285,7 +1284,6 @@ for line in open("grades.txt"):
 - Everyone understands it
 - No new requirements
 - LEAVE IT ALONE (but still separate I/O!)
-`
 
 **3. Very small scale**
 
