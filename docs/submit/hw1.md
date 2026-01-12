@@ -64,28 +64,28 @@ Top 10 most frequent words:
 
 ## The Violations
 
-Can you find and fix tese:
+Can you find and fix these:
 
-Q1. What Separation of Concerns (SoC) issues? What problems do they cause
+Q1. What Separation of Concerns (SoC) issues? What problems do they cause?
 
 Q2. Single Responsibility Principle (SRP) issues? Can you list functions containing multiple other candidate functions?
 
 Q3. Mechanism vs Policy issues? Can you find them?
 
-Q4. Any small Functions pribems (Hint: yes). How to fix?
+Q4. Any small Function problems (Hint: yes). How to fix?
 
 ## Your Assignment
 
 Refactor `wc0.py` following the 4 heuristics.
-Hand in a printd version of hc1.py with commetns on what parts of the code fix what heuristcs. Make sure you ahve lots
-of comemtns. Make sure they include symbols like (Q1,Q2, Q3, AQ4)
+Hand in a version of wc0.py with comments on what parts of the code fix what heuristcs. Make sure you have lots
+of comments. Make sure your comments include symbols like Q1, AQ1, Q2, AQ2, etc. Name the file wc0_fixed.py
 
 ### Required Changes:
 
--  Separate model from presentation**
+- Separate model from presentation**
 - Single responsibility per function**
 - Extract policies to data
--  Keep functions small**
+- Keep functions small**
 ## Testing Your Code:
 
 Your refactored code should produce the **exact same output**
@@ -109,6 +109,7 @@ diff before.txt after.txt  # Should be identical!
    ```python
    CONFIG['stopwords'] = loadStopwords('stopwords.txt')
    ```
+   (Hint: Common english stopwords at [https://github.com/timm/ezr/blob/main/etc/stop_words.txt](https://github.com/timm/ezr/blob/main/etc/stop_words.txt)
 
 3. **Add unit tests:**
    ```python
@@ -134,7 +135,7 @@ diff before.txt after.txt  # Should be identical!
 - Hardcoded policies
 - Mixed I/O and logic
 
-**After (your solution):**
+**After (wc0_fixed.py):**
 - ~75-85 lines
 - 10+ small focused functions
 - CONFIG for all policies
