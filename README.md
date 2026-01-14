@@ -62,7 +62,7 @@ work remains accessible to future generations.
 
 | 📅 Date | 🎓 Lecture | 🛠️ Submission <br>(due start of class) | 📝 Review |
 |:-------------:|:----------:|:---------------------------:|:---------:|
-| Jan 14 |[rules](docs/lect/rules.md) | | |
+| Jan 14 |[intro](docs/lect/intro.md)<br>[rules](docs/lect/rules.md) | | |
 | Jan 21 | |[1a](docs/submit/hw1.md) | |
 | Jan 28 | |1b | |
 | Feb 04 | |2a | |
@@ -76,9 +76,7 @@ work remains accessible to future generations.
 | Apr 01 | |5b | |
 | Apr 08 | |6a | |
 | Apr 15 | |6b | |
-| Apr 22 |show 'n tell |  | |
+| Apr 22 | |   | |
 | Apr 29 |no class (reading day) | | |
 | May 01 | exam | | |
 </div>
-
-(For grad students, 5a 6ab, 7ab will be combined.)
