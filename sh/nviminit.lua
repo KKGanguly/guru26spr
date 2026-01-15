@@ -37,4 +37,13 @@ vim.keymap.set("n", "\\s", ":set spell!<CR>", { silent = true, desc = "Toggle sp
 
 -- colors ------------------------------------------------------------
 vim.cmd.colorscheme("sorbet")
+vim.g.markdown_fenced_languages = {
+  "lua",
+  "python",
+  "bash",
+  "sh",
+  "vim",
+  "js=javascript",
+  "ts=typescript",
+}
 
