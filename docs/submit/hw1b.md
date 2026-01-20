@@ -14,9 +14,14 @@
 <h1 align="center">:cyclone: CSC491/591: How to be a SE Guru <br>NC State, Spring '26</h1>
 <img src="https://raw.githubusercontent.com/txt/guru26spr/refs/heads/main/etc/img/banenr.png"> 
 
-I'll create a practical 10-point rubric for grading this refactoring homework.
 
 # HW1 Grading Rubric (10 Points Total)
+
+## What to hand in
+
+- The hw1a work from the other group
+- One page with the following rubric on the front, and any general comments, notes on the back
+  - Hand written is fine.... but must be readable!
 
 ## 1. Functional Correctness (2 points)
 - **2 pts**: Reading the code, it seems to produces identical output to wc0.py
@@ -108,6 +113,3 @@ I'll create a practical 10-point rubric for grading this refactoring homework.
 - Functions compose well together
 - Easy to add new features (formats, languages)
 - Comments show understanding of *why* each heuristic matters
-```
-
-This rubric emphasizes the core learning objectives while being practical to apply consistently. Want me to adjust the point distribution or add any specific criteria?
