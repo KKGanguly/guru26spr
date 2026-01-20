@@ -16,7 +16,6 @@
 
 I'll create a practical 10-point rubric for grading this refactoring homework.
 
-```markdown
 # HW1 Grading Rubric (10 Points Total)
 
 ## 1. Functional Correctness (2 points)
