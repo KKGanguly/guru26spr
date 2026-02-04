@@ -14,7 +14,7 @@
 <h1 align="center">:cyclone: CSC491/591: How to be a SE Guru <br>NC State, Spring '26</h1>
 <img src="https://raw.githubusercontent.com/txt/guru26spr/refs/heads/main/etc/img/banenr.png"> 
 
-# HW3 Grading Rubric (10 Points Total)
+# HW2B Grading Rubric (10 Points Total)
 
 ## Instructions for Graders
 This rubric uses a split scoring system to ensure both Undergraduate (UG) and Graduate (G) totals equal **10.0 points**.
