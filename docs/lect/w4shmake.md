@@ -519,20 +519,42 @@ Quick and dirty macro system:
 
 ```sh
 src() { cat<<-'EOF' | sed 's/wme/n,mu,m2,sd,has,rows,nump,names/g'
-BEGIN { K=1; M=2 }
+
+BEGIN { K=1
+        M=2
+        main("header"); rogues() }
+
 function main(go,     wme,nn,acc) {
   while(getline>0) {
     gsub(/[ \t]*/,"")
     acc += @go($NF, ++nn, wme)
     go = "data" }
   return acc/(nn - 20) }
+
+function header(_,__,     wme,i) {
+ for(i=1;i<=NF;i++) {
+   names[$i]
+   if (i ~ /^[A-Z]/) nump[i] }}
+
+function data(k,nn,     wme,i,out) {
+  if (nn > 20) out = k == likes(wme,nn,length(n))
+  train(k,wme)
+  return out }
+
+function train(k, wme,i) {
+  n[k]++
+  r = length(r
+  for(i=1;i<NF;i++) {
+    x = $i+0
+    x = x==$i ? x : $i
+    if ($i != "?") 
+      i in nump ? num(k,i,$i,wme) : sym(k,i,$i,wme)}
+
+... 200 lines deleted ...
 EOF
 }
 
-if [[ -t 0 ]]
-then gawk --source "`src`" $*
-else cat - | gawk --source "`src`" $*
-fi
+[[ -t 0 ]] && gawk -f <(src) "$@" || gawk -f <(src)
 ```
 
 What Just Happened?
@@ -540,7 +562,16 @@ What Just Happened?
 1. src() function prints AWK code with placeholder "wme"
 2. sed replaces "wme" with actual field names
 3. gawk runs the generated code
-4. Result: template expansion without a preprocessor
+4. `[[ -t 0 ]]` - Test if stdin (file descriptor 0) is a terminal
+5. `&& gawk -f <(src) "$@"` - If true (terminal), process files from arguments
+6. `|| gawk -f <(src)` - If false (pipe), process from stdin
+7. Result: template expansion without a preprocessor
+
+Usage examples:
+```sh
+./script.sh file.csv          # Uses first gawk (reads file)
+cat data.csv | ./script.sh    # Uses second gawk (reads stdin)
+```
 
 Not so dirty version of the above (uses a very complicated regular expression... not for the meek).
 
@@ -562,8 +593,9 @@ prep() { gawk '
   BEGIN { print "# add 2 blank lines to fix line numbers (in errors)\n"  } 
         { print gensub(/\.([a-zA-Z_][a-zA-Z0-9_]*)/, "[\"\\1\"]", "g")}'; }
 
-gawk -f <(src | prep) "$@"
+[[ -t 0 ]] && gawk -f <(src | prep) "$@" || gawk -f <(src | prep)
 ```
+
 
 ### Git-Aware Prompt
 
