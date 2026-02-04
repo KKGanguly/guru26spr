@@ -14,7 +14,7 @@ Makes it standalone. Names it after the command `g/re/p`
 (global/regular expression/print). Ships it as `grep`. 
 Becomes Unix legend.
 
-Note: Thompson di not "ship" grep to MaMahon. He just added it to his "bin".
+Note: Thompson did not "ship" grep to MaMahon. He just added it to his "bin".
 Now anyone on the same file system can access grep bu adding Ken's path to their startup:
 
 ```sh
@@ -55,6 +55,7 @@ Want to call Python? Easy:
 python3 -c "print(5 + 3)"
 ```
 
+
 **Shell's superpower: orchestrating other programs.**
 
 Originally, even `false` isn't built-in. It's `/usr/bin/false`:
@@ -73,6 +74,8 @@ if false; then echo "never runs"; fi
 
 Shell finds `/usr/bin/false`, runs it, checks exit code. 
 Zero = success. Non-zero = failure.
+
+(HIstorical notes: in  newer versions of shells, true,false built in.
 
 ### Why This Matters
 
@@ -105,6 +108,33 @@ python3 -m pydoc -w myfile && mv myfile.html myfile.pdf
 # Good: type this once
 make pdf
 ```
+
+Other examples from my daily workflow
+
+```sh
+# Short comamnd
+make ~/tmp/mycode.pdf
+
+# Under the hood, in a Makefile 
+# (so glad I do not have to remmeber this all the time)
+~/tmp/%.pdf: %.py  ~/tmp Makefile ## .py ==> .pdf
+	@echo "pdf-ing $@ ... "
+	@a2ps               \
+		-Br               \
+		--quiet            \
+		--portrait          \
+    --lines-per-page=100  \
+		--font-size=6 \
+		--line-numbers=1      \
+		--borders=no           \
+		--pro=color             \
+		--columns=2              \
+		-M letter                 \
+		-o - $< | ps2pdf - $@
+	@open $@
+```
+By the way, in the abive, what happens if `~/tmp` does not exist?
+
 
 Your job: build tools that save future-you time.
 
@@ -220,10 +250,11 @@ You just joined the Unix community. Your tool is now discoverable.
 
 BY the way, the above is an example of a "here doc"
 
-```markdown
 ### Here Documents
 
 Feed multi-line text to commands without temp files:
+
+
 
 ```bash
 # Basic: redirect to command
@@ -253,6 +284,59 @@ if true; then
 	END
 fi
 ```
+
+Quick and dirty macro system
+
+```awk
+src() { cat<<-'EOF' | sed 's/wme/n,mu,m2,sd,has,rows,nump,names/g'
+
+BEGIN { K=1
+        M=2
+        main("header"); rogues() }
+
+function main(go,     wme,nn,acc) {
+  while(getline>0) {
+    gsub(/[ \t]*/,"")
+    acc += @go($NF, ++nn, wme)
+    go = "data" }
+  return acc/(nn - 20) }
+
+function header(_,__,     wme,i) {
+ for(i=1;i<=NF;i++) {
+   names[$i]
+   if (i ~ /^[A-Z]/) nump[i] }}
+EOF
+}
+
+if [[  -t 0 ]]
+then gawk --source "`src`" $*
+else cat - | gawk --source "`src`" $*
+fi
+```
+
+Not so dirty version of the above (uses a very complicated regular expression... not for the meek).
+
+```sh
+#!/usr/bin/env bash
+src() { cat <<'EOF'
+BEGIN {
+  a.i.j = 42
+  print a.i.j
+  a.i=223
+  array(a.i)
+  print .123 }
+
+#--------------------------------------------------------------------
+EOF
+}
+
+prep() { gawk '
+  BEGIN { print "# add 2 blank lines to fix line numbers (in errors)\n"  } 
+        { print gensub(/\.([a-zA-Z_][a-zA-Z0-9_]*)/, "[\"\\1\"]", "g")}'; }
+
+gawk -f <(src | prep) "$@"
+```
+
 
 ### Git-Aware Prompt
 
@@ -360,7 +444,7 @@ files=( *.txt )
 
 # zsh: autocomplete, themes, oh-my-zsh
 # Amazing for interactive use!
- 
+``` 
 
 ### For Scripts: Use Bash
 
@@ -439,6 +523,7 @@ Run it:
 make hello
 ```
 
+
 ### Pattern: Target Depends on Files
 
 ```makefile
@@ -447,6 +532,18 @@ report.txt: data.csv
 ```
 
 Logic: if `data.csv` is newer than `report.txt`, rebuild.
+
+In shell programming, make is only one option among many. Plain shell scripts (sh, bash, zsh) target Unix-like systems and stay language-agnostic but push dependency tracking onto the author. CI systems and container workflows shift orchestration into YAML, binding the process to specific platforms rather than the local shell.
+
+Modern alternatives to make include:
+
+- **Just** and **Task**: Developer-friendly command runners with simpler syntax, better error messages, and cross-platform support; skip make's timestamp-based dependency inference
+- **npm scripts** and **yarn**: JavaScript ecosystem standards via package.json; integrate tightly with node_modules but lack general file dependency tracking
+- **CMake** and **Meson**: Meta-build systems for C/C++ generating platform-native makefiles; handle cross-platform abstractions but add configuration complexity
+- **Gradle**: JVM-centric build tool using Groovy or Kotlin DSLs; powerful for Java/Android with rich plugins but heavyweight for simple tasks
+- **Bazel**: Google's polyglot build system for monorepos; enforces hermetic builds at scale but requires steep learning curves and extensive boilerplate
+
+So why study make? It is more general than most alternatives because it assumes almost nothing about language, toolchain, or domain. Make operates on files, dependencies, and commands, not on Java, C, or JavaScript as such. That neutrality exposes the core idea of incremental computation in its raw form and makes the logic visible rather than buried in a framework. Learning make sharpens your ability to reason about builds and workflows in any language, precisely because it refuses to privilege one.
 
 ### Pattern: Phony Targets
 
