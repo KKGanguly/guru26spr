@@ -174,6 +174,7 @@ cmd1 | cmd2            # Pipe output to next command
 cmd < input.txt        # Read from file
 ```
 
+```
 ┌─ TRY THIS ────────────────────────────────────┐
 │ echo "Hello" > test.txt                       │
 │ echo "World" >> test.txt                      │
@@ -181,6 +182,7 @@ cmd < input.txt        # Read from file
 │                                               │
 │ What do you see? What's the difference?       │
 └───────────────────────────────────────────────┘
+```
 
 ### Tests and Conditionals
 
@@ -241,6 +243,7 @@ greet World            # Prints: Hello World
 greet "Tim Menzies"    # Prints: Hello Tim Menzies
 ```
 
+```            
 ┌─ TRY THIS ────────────────────────────────────┐
 │ 1. Type this function:                        │
 │    greet() { echo "Hi $1, you are $2"; }      │
@@ -251,6 +254,7 @@ greet "Tim Menzies"    # Prints: Hello Tim Menzies
 │ 3. What happens with: greet Bob               │
 │    (only one argument?)                       │
 └───────────────────────────────────────────────┘
+```
 
 ### Special Variables
 
@@ -381,6 +385,7 @@ alias ll='ls -la'
 c() { cd "$1"; ls; }
 ```
 
+```
 ┌─ TRY THIS ────────────────────────────────────┐
 │ 1. Add this to your terminal:                 │
 │    c() { cd "$1"; ls; }                       │
@@ -390,6 +395,7 @@ c() { cd "$1"; ls; }
 │ 3. What happened? Why is this better than:   │
 │    alias c='cd /tmp; ls'                      │
 └───────────────────────────────────────────────┘
+```
 
 ### Example: Color Your Life
 
@@ -739,6 +745,7 @@ report.txt: data.csv
 
 Logic: if `data.csv` is newer than `report.txt`, rebuild.
 
+```
 ┌─ TRY THIS ────────────────────────────────────┐
 │ 1. Create Makefile with above rule            │
 │ 2. Create data.csv with some lines            │
@@ -746,6 +753,7 @@ Logic: if `data.csv` is newer than `report.txt`, rebuild.
 │ 4. Run it again. What message do you see?     │
 │ 5. Touch data.csv. Run make again. Why?       │
 └───────────────────────────────────────────────┘
+```
 
 ### Pattern: Phony Targets
 
@@ -791,6 +799,7 @@ Y = $(shell date)       # =  lazy (evaluated each use)
 Z ?= default            # ?= set only if not already set
 ```
 
+```
 ┌─ TRY THIS ────────────────────────────────────┐
 │ Create Makefile:                              │
 │   A := $(shell date)                          │
@@ -806,6 +815,7 @@ Z ?= default            # ?= set only if not already set
 │ Run: make test                                │
 │ What's different? Why?                        │
 └───────────────────────────────────────────────┘
+```
 
 ### Pattern Rules
 
