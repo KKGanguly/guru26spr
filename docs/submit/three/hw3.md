@@ -15,9 +15,19 @@ For support files, go to https://github.com/txt/guru26spr/tree/main/docs/submit/
 make sh
 🔆 parent/dir main* ▶
 ```
-(note that parent/dir will show your dir and aprent dir names)
+Note that parent/dir will show your dir and aprent dir names.
 
-2. Add a banner that is printed before running the sh.
+Also, for windows users, tput may not run. Is so then isnide `etc/ell`
+change lines with tput to...
+
+```
+bold="\033[1m"
+col0="\033[0m"       # reset
+col1="\033[36m"      # cyan
+col2="\033[33m"      # yellow
+```
+
+2. Add a banner that is printed before running the sh. Change the banner to "think + do".
 
 
 ```
@@ -31,7 +41,7 @@ make sh
 🔆 parent/dir main* ▶
 ```
 
-3. Add make rules to  show date, list mae. Add them to the Makefile hep system:
+3. Add make rules to  show date, list files. Add them to the Makefile hep system:
 
 ```
 🔆 parent/dir main* ▶ make
@@ -61,15 +71,26 @@ Try it on the [match.py](match.py) file included here.
 🔆 parent/dir main* ▶ pycco -d ~/tmp match.py
 pycco: match.py -> /Users/timm/tmp/match.html
 ```
+
+```
 make ~/tmp/match.html 
+pycco: match.py -> /Users/timm/tmp/match.html
 ```
 
+Modify the rule so that `"echo 'p {text-align: right}"` is always appended to ~/tmp/pycco.css
+(so explanation text moves closer to the code it explains).
 
-4. Data Quality 
+
+5. Data Quality  (Big Task)
+
+For HW3, implement S1...S5 (the gawk stuff) this time and A--M (the python stuff)
+will be required for
+HW4. 
+
 
 ## Background
 
-The file `page_blocks_dirty.csv` describes 5491 page layout blocks extracted
+The file `[page_blocks_dirty.csv](page_blocks_dirty.csv)` describes 5491 page layout blocks extracted
 from document images. Each row is one block; the class label says what kind
 of block it is (text, horizontal line, picture, vertical line, graphic).
 
