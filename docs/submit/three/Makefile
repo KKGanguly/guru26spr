@@ -20,7 +20,7 @@ banner:
 	@printf '\033[0m\n'
 
 sh: ## run my shell
-	@-bash --init-file $(HERE)/etc/ell -i
+	@-HERE=$(HERE) bash --init-file $(HERE)/etc/ell -i
 
 push: ## save to cloud
 	@read -p "Reason? " msg; git commit -am "$$msg"; git push; git status

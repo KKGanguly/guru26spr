@@ -1,12 +1,10 @@
-GIT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
-
 # aliases
 tree() { command tree -C "$@"; }
 ls()   { command ls --color "$@"; }
 grep() { command grep --color=auto "$@"; }
 col()  { command column -s, -t "$@"; }
-tmux() { command tmux -u -f $GIT_ROOT/sh/tmux.rc; }
-vi()   { command nvim -u $GIT_ROOT/sh/nviminit.lua "$@"; }
+tmux() { command tmux -u -f $HERE/etc/tmux.rc; }
+vi()   { command nvim -u $HERE/etc/nviminit.lua "$@"; }
 
 # environment
 export EDITOR="$(command -v nano)"
