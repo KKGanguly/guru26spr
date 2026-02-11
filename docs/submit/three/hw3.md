@@ -7,9 +7,18 @@ data files, jsut show first 4 lines.
 
 For support files, go to https://github.com/txt/guru26spr/tree/main/docs/submit/three
 
-## BASE
+ 
+## What to Submit
 
-1. Show this works:
+1. Your `Makefile`
+2. Your `.awk` scripts (S1–S5)
+3. Your `checks.py` (next time , not now)
+4. All output files (`out/S1`–`out/S5`, `out/A`–`out/M`)
+5. A short `REPORT.md` (≤ 1 page) summarizing what you found
+
+
+
+## 1. Show this works:
 
 ```
 make sh
@@ -27,7 +36,7 @@ col1="\033[36m"      # cyan
 col2="\033[33m"      # yellow
 ```
 
-2. Add a banner that is printed before running the sh. Change the banner to "think + do".
+## 2. Add a banner that is printed before running the sh. Change the banner to "think + do".
 
 
 ```
@@ -41,7 +50,7 @@ make sh
 🔆 parent/dir main* ▶
 ```
 
-3. Add make rules to  show date, list files. Add them to the Makefile hep system:
+## 3. Add make rules to  show date, list files. Add them to the Makefile hep system:
 
 ```
 🔆 parent/dir main* ▶ make
@@ -60,7 +69,7 @@ targets:
 ```
 
 
-4. Document some Python code using the Pyhton pycco  package
+## 4. Document some Python code using the Pyhton pycco  package
 
 You will have to install it first.  `pipx  install pycco`
 or `pip install pycco`).
@@ -80,17 +89,19 @@ pycco: match.py -> /Users/timm/tmp/match.html
 Modify the rule so that `"echo 'p {text-align: right}"` is always appended to ~/tmp/pycco.css
 (so explanation text moves closer to the code it explains).
 
+<img width="968" height="344" alt="image" src="https://github.com/user-attachments/assets/07d208e1-e670-4a32-b117-05a93b5dddac" />
 
-5. Data Quality  (Big Task)
+
+## 5. Data Quality  (Big Task)
 
 For HW3, implement S1...S5 (the gawk stuff) this time and A--M (the python stuff)
 will be required for
 HW4. 
 
 
-## Background
+**Background**
 
-The file `[page_blocks_dirty.csv](page_blocks_dirty.csv)` describes 5491 page layout blocks extracted
+The file [page_blocks_dirty.csv](page_blocks_dirty.csv) describes 5491 page layout blocks extracted
 from document images. Each row is one block; the class label says what kind
 of block it is (text, horizontal line, picture, vertical line, graphic).
 
@@ -115,7 +126,7 @@ Your job is to find them.
 | DATASET_ID | dataset identifier |
 | class! | block type: 1=text, 2=horiz line, 3=picture, 4=vert line, 5=graphic |
 
-## Domain Knowledge
+**Domain Knowledge**
 
 Some checks are purely mechanical. Others require **domain knowledge** —
 facts about what the data *should* look like that cannot be deduced from
@@ -314,12 +325,4 @@ Key decisions visible in the code:
 - **Guard clauses**: `h > 0` and `a > 0` prevent division by zero.
   Rows with negative heights are caught by check K, not here.
 
----
-
-## What to Submit
-
-1. Your `Makefile`
-2. Your `.awk` scripts (S1–S5)
-3. Your `checks.py`
-4. All output files (`out/S1`–`out/S5`, `out/A`–`out/M`)
-5. A short `REPORT.md` (≤ 1 page) summarizing what you found
+ 
