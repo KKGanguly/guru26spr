@@ -73,7 +73,7 @@ pycco: match.py -> /Users/timm/tmp/match.html
 ```
 
 ```
-make ~/tmp/match.html 
+🔆 parent/dir main* ▶ make ~/tmp/match.html 
 pycco: match.py -> /Users/timm/tmp/match.html
 ```
 
