@@ -69,7 +69,7 @@ targets:
 ```
 
 
-## 4. Document some Python code using the Pyhton pycco  package
+## 4. Document some Python code using the Python pycco  package
 
 You will have to install it first.  `pipx  install pycco`
 or `pip install pycco`).
