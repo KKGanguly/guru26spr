@@ -147,7 +147,7 @@ def go_tree_score(d, lo, mid):
 
 **D) Exercise: Run & Comment**
 
-1. Run the prompt above on the `treeGrow` function from [xai.py][(xai.py)
+1. Run the prompt above on the `treeGrow` function from [xai.py](xai.py)
 2. *Comment on the result:* Did it use `Any`, or did it successfully guess the parameter types?
 You must always review generated types to ensure the AI didn't hallucinate
 overly restrictive limits (e.g., forgetting that a number could be a float
