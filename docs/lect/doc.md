@@ -57,7 +57,7 @@ At its theoretical core, Diátaxis is based on the philosophy of *craft* and *sk
 When you intersect these two dimensions, you create a complete 2x2 map of human cognitive needs. Because these two dimensions entirely define the territory of "craft," Procida argues there are exactly—and only—four types of documentation:
 
 * **Acquisition + Action = Tutorials** (Learning by doing)
-* **Application + Action = How-To Guides** (Applying skills to a specific task)
+* **Application + Action = How-T Guides** (Applying skills to a specific task)
 * **Application + Cognition = Reference** (Looking up facts while working)
 * **Acquisition + Cognition = Explanation** (Deepening theoretical understanding)
 
@@ -87,7 +87,7 @@ They do not change how the code runs. Instead, they act as machine-readable
 documentation for IDEs, static analysis tools (like `mypy`), and developers.
 
 **A) Sample: Raw Code vs Custom Types & Hints**
-Here is raw, undocumented code from our multi-objective optimizer, `xai.py`:
+Here is raw, undocumented code from our multi-objective optimizer, [xai.py](xai.py):
 
 ```python
 def norm(num, n):
@@ -147,7 +147,7 @@ def go_tree_score(d, lo, mid):
 
 **D) Exercise: Run & Comment**
 
-1. Run the prompt above on the `treeGrow` function from `xai.py`.
+1. Run the prompt above on the `treeGrow` function from [xai.py][(xai.py)
 2. *Comment on the result:* Did it use `Any`, or did it successfully guess the parameter types?
 You must always review generated types to ensure the AI didn't hallucinate
 overly restrictive limits (e.g., forgetting that a number could be a float
