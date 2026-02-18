@@ -454,9 +454,9 @@ output to ensure accuracy.
 
 ----
 
-7. SCALING UP (2):   Meta-prompting
+## 6. SCALING UP (2):   Meta-prompting
 
-The site [xai.html](xai,html) is one file generated via the prompt
+The site [xai.html](xai.html) is one file generated via the prompt
 [xai.html#about](xai.html#about).
 
 That is:
@@ -477,7 +477,7 @@ That is:
 Explanation is understanding-oriented. The user wants to know *why* the system
 exists, its architectural philosophy, and the history behind its design.
 
-**A) Sample: [unix6.pdf](Lions' Commentary on UNIX V6) / [K&R C](kr,pdf)**
+**A) Sample: [unix6.pdf](unix6.pdf) Lions' Commentary on UNIX V6 / [K&R C](kr.pdf)**
 
 > "The easiest way to vary the main memory space used by the operating system
 > is to vary 'NBUF'. If this is forbidden, propose the best way to..."
