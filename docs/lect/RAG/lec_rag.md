@@ -23,6 +23,36 @@ Think OS paging: RAM is tiny, disk is huge, so the OS **pages in** just the work
 set. RAG does the same: the LLM’s context is tiny, your PDF corpus is huge, so we
 **page in** only the most relevant text chunks.
 
+## Background Theory  
+
+**Virtual memory & paging.** The OS keeps only the "working set" in RAM,
+paging in pages from disk on demand. RAG mirrors this exactly: context
+window = RAM (tiny, ~8k–128k tokens), corpus = disk (huge), retriever
+= pager (brings in just what's needed now).
+
+**Caching & dirty flags.** A manifest (mtime + size hash per file)
+is the classic lightweight cache-invalidation trick. Match = cache hit;
+mismatch = evict and reload. Same pattern as Make, ccache, Webpack.
+
+**Embeddings & distributional semantics.** A sentence encoder maps
+text → ℝᵈ such that semantic similarity ≈ geometric proximity.
+Grounded in the distributional hypothesis: words/sentences in similar
+contexts occupy similar regions of the vector space.
+
+**L2 distance.** We rank chunks by Σ(qᵢ−xᵢ)², skipping the √ since
+rank is monotone under squaring. O(n·d) brute-force; swap to ANN
+(HNSW, IVF) only when n × d gets painful.
+
+**Chunking as the retrieval unit.** Chunk size trades recall (big
+chunks carry more context) against precision (small chunks localise
+better). 150–220 words ≈ one dense paragraph — empirically robust
+across domains.
+
+**Grounding vs. hallucination.** An LLM without context interpolates
+from training priors and confabulates. Injecting retrieved chunks turns
+generation into constrained lookup; the model's job shrinks from
+"recall" to "synthesise" — far more reliable.
+
 ## Project setup
 
 ```
