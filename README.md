@@ -69,7 +69,7 @@ work remains accessible to future generations.
 | Feb 11 | |[2b](https://github.com/txt/guru26spr/blob/main/docs/submit/two/hw2b.md) | [w4](docs/review/w4.md) |
 | Feb 18 | [Doco](docs/lect/doc.md) | [3a](docs/submit/three/hw3.md) | [w5](docs/review/w5.md)  |
 | Feb 25 | [DSL](docs/lect/dsl.md)|3b | |
-| Mar 04 | |4a | |
+| Mar 04 | |[4a](docs/submit/four/todo.md) | |
 | Mar 11 | |4b | |
 | Mar 18 | Spring Break (no class) | | |
 | Mar 25 | |5a | |
